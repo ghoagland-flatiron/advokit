@@ -20,19 +20,21 @@ class SunburstDiagram extends Component {
 
   render() {
     return (
-      <Sunburst
-        hideRootNode
-        height={this.props.height}
-        width={this.props.width}
-        data={data}
-        getSize={d => d.children.length || 500}
-        padAngle={() => 0.01}
-        onValueMouseOver={this.mouseOverHandler}
-      >
-        <LabelSeries
-          data={[{x: 0, y: 0, label: this.state.labelText, style: LABEL_STYLE}]}
-        />
-      </Sunburst>
+      <div onClick={this.props.toggleWords}>
+        <Sunburst
+          hideRootNode
+          height={this.props.height}
+          width={this.props.width}
+          data={data}
+          getSize={d => d.children.length || 500}
+          padAngle={() => 0.01}
+          onValueMouseOver={this.mouseOverHandler}
+        >
+          <LabelSeries
+            data={[{x: 0, y: 0, label: this.state.labelText, style: LABEL_STYLE}]}
+          />
+        </Sunburst>
+      </div>
     )
   }
 
