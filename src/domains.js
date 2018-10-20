@@ -3,7 +3,7 @@ export default {
   children: [
     {
       title: "Cultural",
-      color: "#FFFFFF",
+      color: "#D76967",
       children: [
         {
           title: "Language",
