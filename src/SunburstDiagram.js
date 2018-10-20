@@ -1,12 +1,11 @@
 import React, { Component } from 'react'
-import { Sunburst } from 'react-vis';
+import { Sunburst, LabelSeries } from 'react-vis';
 import data from './domains'
 
 
 const LABEL_STYLE = {
-  fontSize: '10px',
-  // textAnchor: 'middle'
-
+  fontSize: '15px',
+  textAnchor: 'middle'
 };
 
 class SunburstDiagram extends Component {
@@ -15,30 +14,28 @@ class SunburstDiagram extends Component {
     labelText: ""
   }
 
-  render() {
-    const newChildren = data.children.map(point => ({
-      ...point,
-      labelStyle: LABEL_STYLE,
-      children: point.children.map(subpt => ({...subpt, labelStyle: LABEL_STYLE}))
-    }))
+  mouseOverHandler = (node) => {
+    this.setState({ labelText: node.title })
+  }
 
-    const newData = {...data, children: newChildren}
+  render() {
     return (
       <Sunburst
         hideRootNode
         height={this.props.height}
         width={this.props.width}
-        data={newData}
-
-        getLabel={d => d.title}
+        data={data}
         getSize={d => d.children.length || 500}
         padAngle={() => 0.01}
+        onValueMouseOver={this.mouseOverHandler}
       >
-
-
+        <LabelSeries
+          data={[{x: 0, y: 0, label: this.state.labelText, style: LABEL_STYLE}]}
+        />
       </Sunburst>
     )
   }
+
 }
 
 export default SunburstDiagram
