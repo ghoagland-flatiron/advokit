@@ -27,7 +27,7 @@ export default {
     },
     {
       title: "Economic",
-
+      color: '#0d7a71',
       children: [
         {
           title: "State Costs",
@@ -48,7 +48,7 @@ export default {
     },
     {
       title: "Geographic",
-
+      color: "#6a0654",
       children: [
         {
           title: "Relative Geography",
@@ -69,7 +69,7 @@ export default {
     },
     {
       title: "Institutional",
-
+      color: '#A8D96D',
       children: [
         {
           title: "Education Systems & Facilities",
@@ -137,12 +137,10 @@ export default {
       children: [
         {
           title: "Human Rights",
-
           children: []
         },
         {
           title: "Jurisprudence",
-
           children: []
         },
         {
@@ -159,7 +157,7 @@ export default {
     },
     {
       title: "Individual",
-
+      color: '#70B99B',
       children: [
         {
           title: "Personal Experiences",
@@ -190,7 +188,7 @@ export default {
     },
     {
       title: "Political",
-
+      color: "#D17162",
       children: [
         {
           title: "Activism",
@@ -216,7 +214,7 @@ export default {
     },
     {
       title: "Medical",
-
+      color: '#609DC2',
       children: [
         {
           title: "Data/Statistics of Procedures",
@@ -252,7 +250,7 @@ export default {
     },
     {
       title: "Temporal",
-
+      color: '#b09d21',
       children: [
         {
           title: "Relative Time",
@@ -268,6 +266,7 @@ export default {
     },
     {
       title: "Conceptional",
+      color: '#55647D',
       children: [
         {
           title: "Auditory Concepts",
@@ -296,6 +295,7 @@ export default {
     },
     {
       title: "Demographic",
+      color: '#F07954',
       children: [
         {
           title: "Age",
