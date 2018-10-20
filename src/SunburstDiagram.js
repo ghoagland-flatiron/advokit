@@ -19,12 +19,19 @@ class SunburstDiagram extends Component {
   }
 
   render() {
+    const newData = {
+      ...data,
+      children: data.children.map(child => ({
+        ...child,
+        children: child.children.map(elem => ({...elem, color: child.color}))
+      }))
+    }
     return (
       <Sunburst
         hideRootNode
         height={this.props.height}
         width={this.props.width}
-        data={data}
+        data={newData}
         getSize={d => d.children.length || 500}
         padAngle={() => 0.01}
         onValueMouseOver={this.mouseOverHandler}
